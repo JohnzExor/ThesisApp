@@ -1,9 +1,14 @@
-{% extends "base.html"%} {% block content %} {% for post in post %}
-<div class="title">{{ post.title }}</div>
-<div>{{ post.publish }}</div>
-<div>{{ post.authors }}</div>
-<div>{{post.abstract}}</div>
-{% endfor %}
+{% extends "base.html"%} {% block content %}
+<div class="container">
+  {% for post in post %}
+  <div class="item">
+    <div class="title">{{ post.title }}</div>
+    <div class="publish">{{ post.publish }}</div>
+    <div>{{ post.authors }}</div>
+    <div>{{post.abstract}}</div>
+  </div>
+  {% endfor %}
+</div>
 <div class="pagination">
   <span class="step-links">
     {% if post.has_previous %}
