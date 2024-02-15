@@ -1,0 +1,6 @@
+{% extends "base.html"%} {% block content %} {% for post in post %}
+<div class="title">{{ post.title }}</div>
+<div>{{ post.publish }}</div>
+<div>{{ post.authors }}</div>
+<div>{{post.abstract}}</div>
+{% endfor %} {% endblock %}
