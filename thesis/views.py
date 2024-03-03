@@ -9,9 +9,16 @@ def thesis(request):
     paginator = Paginator(post, 3)
     page_number = request.GET.get("page")
     post = paginator.page(page_number)
-    return render(request, "pagination.html", {"post": post})
+    return render(request, "thesis/pagination.html", {"post": post})
 
 
 def thesis_details(request, id):
     post = get_object_or_404(Post, id=id, status=Post.Status.APPROVED)
-    return render(request, "thesis_details.html", {"post": post})
+    return render(request, "thesis/details.html", {"post": post})
+
+
+def landing_page(request):
+    return render(
+        request,
+        "home.html",
+    )
