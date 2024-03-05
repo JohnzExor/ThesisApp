@@ -2,7 +2,9 @@
 <div class="container">
   {% for post in post %}
   <div class="item">
-    <div class="title">{{ post.title }}</div>
+    <div class="title">
+      <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+    </div>
     <div class="publish">{{ post.publish }}</div>
     <div>{{ post.authors }}</div>
     <div>{{post.abstract}}</div>

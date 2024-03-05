@@ -12,8 +12,15 @@ def thesis(request):
     return render(request, "thesis/pagination.html", {"post": post})
 
 
-def thesis_details(request, id):
-    post = get_object_or_404(Post, id=id, status=Post.Status.APPROVED)
+def thesis_details(request, year, month, day, post):
+    post = get_object_or_404(
+        Post,
+        status=Post.Status.APPROVED,
+        publish__year=year,
+        publish__month=month,
+        publish__day=day,
+        slug=post,
+    )
     return render(request, "thesis/details.html", {"post": post})
 
 
