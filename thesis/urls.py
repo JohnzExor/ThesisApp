@@ -10,4 +10,5 @@ urlpatterns = [
         name="thesis_details",
     ),
     path("home/", views.landing_page, name="thesis_landing_page"),
+    path('<int:post_id>/comment/', views.post_comment, name='post_comment'),
 ]
