@@ -3,7 +3,7 @@ from . import views
 
 app_name = "thesis"
 urlpatterns = [
-    path("", views.thesis, name="thesis_list"),
+    path("", views.thesis_list, name="thesis_list"),
     path(
         "<int:year>/<int:month>/<int:day>/<slug:post>/",
         views.thesis_details,
@@ -11,4 +11,5 @@ urlpatterns = [
     ),
     path("home/", views.landing_page, name="thesis_landing_page"),
     path('<int:post_id>/comment/', views.post_comment, name='post_comment'),
+    path("comment/", views.thesis_search, name="thesis_search")
 ]

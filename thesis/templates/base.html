@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 <body>
+  <form action="{% url 'thesis:thesis_search' %}">
+    <input type="text" name="keyword" placeholder="Search...">
+    <button type="submit">Search</button>
+  </form>
   <div id="content">
     {% block content %}
     {% endblock %}
