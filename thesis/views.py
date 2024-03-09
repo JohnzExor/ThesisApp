@@ -54,12 +54,6 @@ def thesis_details(request, year, month, day, post):
                    "form":form})
 
 
-def landing_page(request):
-    return render(
-        request,
-        "home.html",
-    )
-
 @require_POST
 def post_comment(request, post_id):
     post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
